@@ -1,0 +1,14 @@
+<h3><%= @note.content %></h3>
+<hr>
+  <p>
+    <%= link_to 'edit', edit_note_path(@note) %>
+  </p>
+  <p>
+    <%= link_to 'delete', note_path(@note), method: :delete %>
+  </p>
+<p>Readers</p>
+<ul>
+  <%= @note.readers.each do |reader| %>
+    <li><%= reader.name %></li>
+  <% end %>
+</ul>
